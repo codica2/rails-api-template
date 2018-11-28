@@ -1,5 +1,8 @@
 # Rails API template
 
+![How it works](https://raw.githubusercontent.com/codica2/rails-api-template/master/doc/images/how-it-works.gif)
+
+
 ## How to use?
 ```
 rails _5.2.1.1_ new codica --api --database=postgresql -m https://raw.githubusercontent.com/codica2/rails-api-template/master/rails_5_2_1_1_api_template.rb -T
