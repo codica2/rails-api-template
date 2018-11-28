@@ -6,6 +6,7 @@ gem 'fast_jsonapi'
 
 gem_group :development do
   gem 'annotate'
+  gem 'overcommit'
   gem 'rubocop', require: false
 end
 
@@ -157,6 +158,17 @@ public/uploads/*
 .env
 CODE
 
+file '.overcommit.yml', <<-CODE
+PreCommit:
+  ALL:
+    problem_on_unmodified_line: ignore
+    required: false
+    quiet: false
+  RuboCop:
+    enabled: true
+    on_warn: fail # Treat all warnings as failures
+CODE
+
 if yes?('Create database.yml? (yes/no)')
   app_name = ask('What is your db name?')
   file 'config/database.yml', databse_config(app_name)
@@ -169,4 +181,5 @@ after_bundle do
   git :init
   git add: '.'
   git commit: "-a -m 'Initial commit'"
+  run 'overcommit --install'
 end
