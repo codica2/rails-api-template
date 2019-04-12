@@ -35,7 +35,7 @@ rails _5.2.1.1_ new codica --api --database=postgresql -m https://raw.githubuser
 * [simplecov](https://github.com/colszowka/simplecov)
 
 ## License
-rails-api-template is Copyright © 2015-2018 Codica. It is released under the [MIT License](https://opensource.org/licenses/MIT).
+rails-api-template is Copyright © 2015-2019 Codica. It is released under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## About Codica
 
