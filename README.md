@@ -5,13 +5,13 @@
 
 ## How to use?
 ```
-rails _5.2.1.1_ new codica --api --database=postgresql -m https://raw.githubusercontent.com/codica2/rails-api-template/master/rails_5_2_1_1_api_template.rb -T
+rails _6.0.0_ new codica --api --database=postgresql -m https://raw.githubusercontent.com/codica2/rails-api-template/master/rails_6_0_0_api_template.rb -T
 ```
 
 ## Stack & Features
 
-* Ruby 2.5.3
-* Rails 5.2.1.1
+* Ruby 2.6.3
+* Rails 6.0.0
 * API mode
 * Postgres
 * Puma
@@ -19,6 +19,7 @@ rails _5.2.1.1_ new codica --api --database=postgresql -m https://raw.githubuser
 * Fast JSON:API serializer for Ruby Objects
 * RSpec testing framework
 * Configurable and extendable Git hook
+* Token-based authentication
 
 ## Installed gems
 
@@ -33,9 +34,15 @@ rails _5.2.1.1_ new codica --api --database=postgresql -m https://raw.githubuser
 * [faker](https://github.com/stympy/faker)
 * [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
 * [simplecov](https://github.com/colszowka/simplecov)
+* [bcrypt](https://github.com/codahale/bcrypt-ruby)
+* [simple_command](https://github.com/nebulab/simple_command)
+* [jwt](https://github.com/jwt/ruby-jwt)
+* [pundit](https://github.com/varvet/pundit)
+* [rolify](https://github.com/RolifyCommunity/rolify)
+* [sidekiq](https://github.com/mperham/sidekiq)
 
 ## License
-rails-api-template is Copyright © 2015-2019 Codica. It is released under the [MIT License](https://opensource.org/licenses/MIT).
+rails-api-template is Copyright © 2015-2020 Codica. It is released under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## About Codica
 
