@@ -27,17 +27,10 @@ gem 'fast_jsonapi'
 
 gem 'sidekiq'
 
-# Apitome is a API documentation tool for Rails built on top of the great RSpec DSL
-gem 'apitome'
-
 # Generate pretty API docs for your Rails APIs.
 gem 'rspec_api_documentation'
 
 gem_group :development do
-  # Show emails for development mode http://localhost:3000/letter_opener
-  gem 'letter_opener'
-  gem 'letter_opener_web', '~> 1.0'
-
   # static analysis tool which checks Ruby on Rails applications for security vulnerabilities.
   gem 'brakeman'
   gem 'annotate'
@@ -66,6 +59,8 @@ gem_group :test do
   gem 'simplecov', require: false
 end
 
+run 'bundle install'
+
 after_bundle do
   run 'rspec --init'
 end
@@ -78,7 +73,7 @@ default: &default
   encoding: unicode
   pool: 5
   username: postgres
-  password:
+  password: password
 development:
   <<: *default
   database: #{app_name}_development
@@ -158,9 +153,6 @@ Layout/EmptyLinesAroundModuleBody:
 Layout/EmptyLinesAroundClassBody:
   EnforcedStyle: empty_lines
 
-Metrics/LineLength:
-  Max: 120
-
 Metrics/ClassLength:
   Max: 250
 
@@ -175,9 +167,6 @@ Metrics/MethodLength:
 
 Metrics/CyclomaticComplexity:
   Max: 7
-
-Rails:
-  Enabled: true
 CODE
 
 file '.gitignore', <<-CODE
@@ -271,7 +260,7 @@ class AuthenticateUser
   def user
     current_user = User.find_by(email: email)
 
-    return current_user if current_user && current_user.authenticate(password)
+    return current_user if current_user&.authenticate(password)
 
     errors.add(:user_authentication, 'Invalid credentials')
   end
