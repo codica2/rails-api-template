@@ -2,8 +2,6 @@
 
 # Adding useful gems
 
-ruby '2.6.3'
-
 # State machines for Ruby classes
 gem 'aasm'
 
